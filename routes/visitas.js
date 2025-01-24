@@ -3,7 +3,6 @@ const queries = require("../queries/visitas");
 
 const router = express.Router();
 
-// Endpoint para obtener usuarios
 router.get("/", (req, res) => {
   queries.getVisitas((err, results) => {
     if (err) {
