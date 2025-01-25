@@ -45,32 +45,38 @@ const getVisitasFilter = (filters, callback) => {
   `;
 
   const conditions = [];
+  const values = [];
 
   if (filters.fecha_visita) {
-    conditions.push(`bt.fecha_visita = '${filters.fecha_visita}'`);
+    conditions.push(`bt.fecha_visita = ?`);
+    values.push(filters.fecha_visita);
   }
 
   if (filters.colonia) {
-    conditions.push(`cc.nombre_colonias LIKE '%${filters.colonia}%'`);
+    conditions.push(`cc.nombre_colonias LIKE ?`);
+    values.push(`%${filters.colonia}%`);
   }
 
   if (filters.municipio) {
-    conditions.push(`cm.nombre_municipios LIKE '%${filters.municipio}%'`);
+    conditions.push(`cm.nombre_municipios LIKE ?`);
+    values.push(`%${filters.municipio}%`);
   }
 
   if (filters.estado) {
-    conditions.push(`ce.nombre_estado LIKE '%${filters.estado}%'`);
+    conditions.push(`ce.nombre_estado LIKE ?`);
+    values.push(`%${filters.estado}%`);
   }
 
   if (filters.seccion) {
-    conditions.push(`cse.nombre_seccion LIKE '%${filters.seccion}%'`);
+    conditions.push(`cse.nombre_seccion LIKE ?`);
+    values.push(`%${filters.seccion}%`);
   }
 
   if (conditions.length > 0) {
     query += " WHERE " + conditions.join(" AND ");
   }
 
-  db.query(query, callback);
+  db.query(query, values, callback);
 };
 
 module.exports = {
