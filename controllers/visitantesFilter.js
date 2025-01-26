@@ -1,8 +1,8 @@
 const db = require("../config/db");
-const { getVisitasBaseQuery } = require("../queries/visitas");
+const { getVisitantesBaseQuery } = require("../queries/visitantes");
 
 const getVisitantesFilter = (filters, callback) => {
-  let query = getVisitasBaseQuery;
+  let query = getVisitantesBaseQuery;
 
   const conditions = [];
   const values = [];
