@@ -5,25 +5,19 @@ const router = express.Router();
 
 router.post("/", (req, res) => {
   const visitanteData = req.body.visitante;
-  const usuarioData = req.body.usuario;
   const visitaData = req.body.visita;
 
-  visitasInsert.insertVisita(
-    visitanteData,
-    usuarioData,
-    visitaData,
-    (err, results) => {
-      if (err) {
-        res
-          .status(500)
-          .json({ error: "Error al insertar la visita", message: err.message });
-      } else {
-        res
-          .status(200)
-          .json({ message: "Visita registrada correctamente", results });
-      }
+  visitasInsert.insertVisita(visitanteData, visitaData, (err, results) => {
+    if (err) {
+      res
+        .status(500)
+        .json({ error: "Error al insertar la visita", message: err.message });
+    } else {
+      res
+        .status(200)
+        .json({ message: "Visita registrada correctamente", results });
     }
-  );
+  });
 });
 
 module.exports = router;

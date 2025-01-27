@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `cat_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cat_usuario` (
-  `id_tipo` int NOT NULL AUTO_INCREMENT,
+  `id_tipo` varchar(7) NOT NULL,
   `descripcion` varchar(50) NOT NULL,
   PRIMARY KEY (`id_tipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `cat_usuario` (
 
 LOCK TABLES `cat_usuario` WRITE;
 /*!40000 ALTER TABLE `cat_usuario` DISABLE KEYS */;
-INSERT INTO `cat_usuario` VALUES (1,'Administrador'),(2,'Recepcionista'),(3,'Reporteador'),(4,'Capturista');
+INSERT INTO `cat_usuario` VALUES ('CU12345','Administrador'),('CU23456','Recepcionista');
 /*!40000 ALTER TABLE `cat_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-26 11:58:49
+-- Dump completed on 2025-01-27 11:38:27
