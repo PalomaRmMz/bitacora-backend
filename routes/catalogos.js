@@ -1,5 +1,5 @@
 const express = require("express");
-const queries = require("../queries/catalogos");
+const queries = require("../controllers/catalogos");
 
 const router = express.Router();
 

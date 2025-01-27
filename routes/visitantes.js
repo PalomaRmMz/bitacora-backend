@@ -1,5 +1,5 @@
 const express = require("express");
-const queries = require("../queries/visitantes");
+const queries = require("../controllers/visitantes");
 
 const router = express.Router();
 

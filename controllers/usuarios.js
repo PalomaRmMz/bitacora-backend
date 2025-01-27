@@ -6,8 +6,8 @@ const getUsuarios = (callback) => {
     SELECT 
         rg.nombre_usuario AS usuario,
         dt.nombre AS nombre,
-        dt.a_paterno AS apellido_paterno,
-        dt.a_materno AS apellido_materno,
+        dt.a_paterno AS ap_usuario,
+        dt.a_materno AS am_usuario,
         cat.descripcion AS tipo_usuario
     FROM 
         rg_usuarios rg
