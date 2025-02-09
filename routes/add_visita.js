@@ -9,13 +9,15 @@ router.post("/", (req, res) => {
 
   visitasInsert.insertVisita(visitanteData, visitaData, (err, results) => {
     if (err) {
-      res
-        .status(500)
-        .json({ error: "Error al insertar la visita", message: err.message });
+      res.status(500).json({
+        error: "Error al insertar la visita",
+        message: err.message,
+      });
     } else {
-      res
-        .status(200)
-        .json({ message: "Visita registrada correctamente", results });
+      res.status(200).json({
+        message: "Visita registrada correctamente",
+        results,
+      });
     }
   });
 });

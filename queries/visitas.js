@@ -3,6 +3,7 @@ const getVisitasBaseQuery = `
       bt.id_registro_visita,
       bt.fecha_visita,
       bt.hora_visita,
+      dv.id_visitante AS id_visitante,
       dv.nombre AS nombre_visitante,
       dv.a_paterno AS ap_visitante,
       dv.a_materno AS am_visitante,

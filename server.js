@@ -22,5 +22,5 @@ app.use("/api/visitas/addvisita", visitasAddRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server en puerto ${PORT}`);
+  console.log(`Server corriendo en el puerto ${PORT}`);
 });
