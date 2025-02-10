@@ -8,6 +8,7 @@ const visitantesRoutes = require("./routes/visitantes");
 const visitantesFilterRoutes = require("./routes/visitantesFilter");
 const visitasAddRoutes = require("./routes/add_visita");
 const checkIDRegistroVisitaRoutes = require("./routes/checkIDRegistroVisita");
+const checkIDVisitanteRoutes = require("./routes/checkIDVisitante");
 
 const app = express();
 app.use(cors());
@@ -19,6 +20,7 @@ app.use("/api/visitas", visitasRoutes);
 app.use("/api/visitas/check", checkIDRegistroVisitaRoutes);
 app.use("/api/visitas/filtro", visitasFilterRoutes);
 app.use("/api/visitantes", visitantesRoutes);
+app.use("/api/visitantes/check", checkIDVisitanteRoutes);
 app.use("/api/visitantes/filtro", visitantesFilterRoutes);
 app.use("/api/visitas/addvisita", visitasAddRoutes);
 
